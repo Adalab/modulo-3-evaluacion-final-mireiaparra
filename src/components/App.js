@@ -45,7 +45,7 @@ function App() {
           element={
             <>
             <Filters handleFilterName={handleFilterName} filterByName={filterByName} />
-          <CharactersList characters={charactersFiltered} />
+          <CharactersList characters={charactersFiltered} filterByName={filterByName} />
           </>}
         >
         </Route>
