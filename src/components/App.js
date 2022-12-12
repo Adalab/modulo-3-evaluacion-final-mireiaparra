@@ -1,10 +1,12 @@
 import "../styles/App.scss";
+
 import getDataFromApi from "../services/api";
 import { useEffect, useState } from "react";
 import CharactersList from "./CharactersList";
 import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
 import { Route, Routes } from "react-router-dom";
+import Header from "./Header";
 
 function App() {
   // VARIABLES ESTADO
@@ -28,15 +30,16 @@ function App() {
     character.name.toLowerCase().includes(filterByName.toLowerCase())
   );
 
-  const findCharacter = (characterId) => {
-    dataCharacters.find((character) => 
-       character.id === parseInt(characterId));
-  };
+  const findCharacter = (id) => { 
+    return dataCharacters.find((character) => character.id === parseInt(id))};
+    
+       
+  console.log(findCharacter(1));
   // HTML EN EL RETURN
 
   return (
     <div className="App">
-      <h1 className="title">Rick y Morty</h1>
+      <Header />
 
       <Routes>
 
@@ -50,7 +53,7 @@ function App() {
         >
         </Route>
 
-        <Route path="/character/:characterId" element={<CharacterDetail  findCharacter={findCharacter}/>}
+        <Route path="/character/:characterId" element={<CharacterDetail findCharacter={findCharacter}/>}
         >
         </Route>
 

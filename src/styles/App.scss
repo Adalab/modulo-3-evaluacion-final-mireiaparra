@@ -1,5 +1,19 @@
-@import 'core/reset';
+@import "core/reset";
 
-/*
-  Aquí puedes poner tu código Sass
-*/
+.header {
+  background: rgb(3, 5, 5);
+  background: radial-gradient(circle, rgba(3,5,5,1) 72%, rgba(90,231,240,1) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  &__logo {
+    width: 400px;
+    height: 200px;
+  }
+
+    &__title{
+      margin-top: 20px;
+    font-family: 'Fira Sans', sans-serif;
+  }
+}
