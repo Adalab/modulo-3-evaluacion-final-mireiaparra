@@ -1,9 +1,18 @@
 import '../styles/App.scss';
+import getDataFromApi from '../services/api';
+import { useEffect, useState } from 'react';
+import CharactersList from './CharactersList';
 
 function App() {
   // VARIABLES ESTADO
+  const [dataCharacters, setDataCharacters] = useState([]);
 
-  // USEEFFECT ?
+  // USEEFFECT 
+  useEffect(() => {
+    getDataFromApi().then((cleanData) => {
+      setDataCharacters(cleanData);
+    })
+  }, []);
 
   // FUNCIONES HANDLER
 
@@ -14,8 +23,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="title">Rellename!</h1>
-
-      {/* Aquí va tu código HTML. */}
+      <CharactersList characters={dataCharacters}/>
     </div>
   );
 }
