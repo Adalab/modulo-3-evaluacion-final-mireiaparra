@@ -6,7 +6,6 @@
       rgba(90, 230, 240, 0.292) 100%
     ),
     url("../images/background.jpg");
-  padding-top: 30px;
   margin-bottom: 30px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -14,6 +13,7 @@
   row-gap: 20px;
   justify-items: center;
   padding: 20px;
+
   &__article {
     background: rgb(3, 5, 5);
     background: radial-gradient(
@@ -30,12 +30,19 @@
     flex-direction: column;
     gap: 10px;
     width: 250px;
-    height: 310px;
+    height: 330px;
   }
+
   &__img {
     width: 200px;
   }
+
   &__name {
     font-size: 1.3rem;
+  }
+
+  &__icon {
+    height: 30px;
+    margin-bottom: 10px;
   }
 }

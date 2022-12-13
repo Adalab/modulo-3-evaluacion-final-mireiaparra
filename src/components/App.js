@@ -34,7 +34,7 @@ function App() {
     return dataCharacters.find((character) => character.id === parseInt(id));
   };
 
-  console.log(findCharacter(1));
+
   // HTML EN EL RETURN
 
   return (
