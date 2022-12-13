@@ -9,7 +9,7 @@ const CharactersList = ({characters, filterByName}) => {
     })
     return (
       <section>
-        <ul>{characterElement}</ul>
+        <ul className="list">{characterElement}</ul>
       </section>
     );
 }

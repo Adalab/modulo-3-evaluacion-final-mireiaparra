@@ -7,9 +7,9 @@ const FilterByName = (props) => {
         ev.preventDefault();
     };
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Busca un personaje</label>
-            <input type="text" name="name" id="name" value={props.filterByName} onChange={handleChange}/>
+        <form onSubmit={handleSubmit} className="form">
+            <label htmlFor="name" className="form__label">Busca un personaje</label>
+            <input type="text" name="name" id="name" value={props.filterByName} onChange={handleChange} className="form__input"/>
         </form>
     );
 };

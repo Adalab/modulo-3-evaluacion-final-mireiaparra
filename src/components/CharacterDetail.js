@@ -5,16 +5,18 @@ const CharacterDetail = (props) => {
     return (
         <>
         <Link to='/'>Volver atrás</Link>
-        <li>
-        <article>
-            <img src={characterFound.image} alt={characterFound.name}/>
-            <h2>{characterFound.name}</h2>
+        <div className="list_container--detail">
+        <article className="list__article--detail">
+            <img className="list__img--detail" src={characterFound.image} alt={characterFound.name}/>
+            <div className="list__text">
+            <h2 className="list__name">{characterFound.name}</h2>
             <h3>{characterFound.species}</h3>
             <p>{characterFound.planet}</p>
             <p>{characterFound.episodes}</p>
             <p>{characterFound.status}</p>
+            </div>
         </article>
-        </li>
+        </div>
         </>
     );
 };

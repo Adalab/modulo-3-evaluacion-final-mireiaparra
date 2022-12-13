@@ -30,10 +30,10 @@ function App() {
     character.name.toLowerCase().includes(filterByName.toLowerCase())
   );
 
-  const findCharacter = (id) => { 
-    return dataCharacters.find((character) => character.id === parseInt(id))};
-    
-       
+  const findCharacter = (id) => {
+    return dataCharacters.find((character) => character.id === parseInt(id));
+  };
+
   console.log(findCharacter(1));
   // HTML EN EL RETURN
 
@@ -42,21 +42,28 @@ function App() {
       <Header />
 
       <Routes>
-
         <Route
           path="/"
           element={
             <>
-            <Filters handleFilterName={handleFilterName} filterByName={filterByName} />
-          <CharactersList characters={charactersFiltered} filterByName={filterByName} />
-          </>}
-        >
-        </Route>
+              <Filters
+                handleFilterName={handleFilterName}
+                filterByName={filterByName}
+              />
+              <CharactersList
+                characters={charactersFiltered}
+                filterByName={filterByName}
+              />
+            </>
+          }
+        ></Route>
 
-        <Route path="/character/:characterId" element={<CharacterDetail findCharacter={findCharacter}/>}
-        >
-        </Route>
-
+        <Route
+          path="/character/:characterId"
+          element={
+              <CharacterDetail findCharacter={findCharacter} />
+          }
+        ></Route>
       </Routes>
     </div>
   );

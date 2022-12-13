@@ -1,19 +1,95 @@
 @import "core/reset";
 
+.App {
+  font-family: "Fira Sans", sans-serif;
+  // background: rgb(90,231,240);
+  // background: linear-gradient(0deg, rgba(90,231,240,1) 21%, rgba(3,5,5,1) 100%);
+}
+
 .header {
   background: rgb(3, 5, 5);
-  background: radial-gradient(circle, rgba(3,5,5,1) 72%, rgba(90,231,240,1) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(3, 5, 5, 1) 72%,
+    rgba(90, 231, 240, 1) 100%
+  );
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  
+  align-items: center;
+
   &__logo {
     width: 400px;
     height: 200px;
   }
 
-    &__title{
-      margin-top: 20px;
-    font-family: 'Fira Sans', sans-serif;
+  &__title {
+    transform: translateY(150%);
   }
+}
+
+.form {
+  margin-top: 30px;
+  text-align: center;
+  &__label {
+    padding: 10px;
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  justify-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  &__article {
+    background: rgb(3, 5, 5);
+    background: radial-gradient(
+      circle,
+      rgba(3, 5, 5, 1) 43%,
+      rgba(90, 231, 240, 1) 100%
+    );
+    padding: 20px;
+    border-radius: 10%;
+    color: white;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 250px;
+    height: 310px;
+
+    &--detail {
+      background: rgb(108, 134, 134);
+      padding: 20px;
+      border-radius: 3%;
+      color: white;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 70%;
+      height: 50vh;
+    }
+  }
+  &__img {
+    width: 200px;
+    &--detail {
+      width: 300px;
+      border: 3px dashed #e9e1e1;
+      padding: 8px;
+    }
+  }
+  &__name {
+    font-size: 1.3rem;
+  }
+  &__text {
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+.list_container--detail {
+  display: flex;
+  justify-content: center;
 }
