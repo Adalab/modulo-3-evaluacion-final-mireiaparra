@@ -1,4 +1,5 @@
 import {Link, useParams} from 'react-router-dom';
+import arrow from '../images/arrow.png';
 const CharacterDetail = (props) => {
     const params = useParams();
     const characterFound = props.findCharacter(params.characterId);
@@ -13,7 +14,7 @@ const CharacterDetail = (props) => {
             <p>{characterFound.episodes}</p>
             <p>{characterFound.status}</p>
             </div>
-            <Link to='/'>Volver atrás</Link>
+            <Link to='/'><img className="detail__arrow" src={arrow} alt="arrow back"/></Link>
         </article>
         </section>
     );
