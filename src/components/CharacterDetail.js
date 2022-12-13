@@ -2,9 +2,14 @@ import {Link, useParams} from 'react-router-dom';
 import arrow from '../images/arrow.png';
 import alien from "../images/alien.png";
 import human from "../images/human.png";
+import NotFound from './NotFound';
 const CharacterDetail = (props) => {
     const params = useParams();
     const characterFound = props.findCharacter(params.characterId);
+
+    if (characterFound === undefined) {
+        return <NotFound />
+      } else {
     const returnSpecies = () => {
        if (characterFound.species === "Alien"){
         return alien;
@@ -27,5 +32,6 @@ const CharacterDetail = (props) => {
         </article>
         </section>
     );
+};
 };
 export default CharacterDetail;

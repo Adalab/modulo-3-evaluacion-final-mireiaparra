@@ -15,3 +15,4 @@ const CharactersList = ({characters, filterByName}) => {
 }
 
 export default CharactersList;
+
