@@ -1,0 +1,40 @@
+.detail {
+  display: flex;
+  justify-content: center;
+  background-image: radial-gradient(circle, rgba(3, 5, 5, 0.917) 35%, rgba(90, 230, 240, 0.292) 100%),url("../images/background.jpg");
+  height: 75vh;
+  &__article {
+    background: rgb(108, 134, 134);
+    margin: 60px;
+    padding: 20px;
+    border-radius: 3%;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    height: 50vh;
+  }
+  &__img {
+    width: 300px;
+    border: 3px dashed #cbdae3;
+    padding: 8px;
+  }
+
+  &__text {
+    text-align: center;
+    padding: 20px;
+  }
+  &__h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  &__h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  &__p {
+
+  }
+}

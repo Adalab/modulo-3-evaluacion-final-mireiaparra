@@ -1,25 +1,24 @@
 @import "core/reset";
+@import "CharacterDetail";
+@import "Filters";
 
-.App {
+.list {
   font-family: "Fira Sans", sans-serif;
-  // background: rgb(90,231,240);
-  // background: linear-gradient(0deg, rgba(90,231,240,1) 21%, rgba(3,5,5,1) 100%);
+  background-image: radial-gradient(circle, rgba(3, 5, 5, 0.917) 35%, rgba(90, 230, 240, 0.292) 100%),url("../images/background.jpg");
+  padding-top: 30px;
+  margin-bottom: 30px;
 }
 
 .header {
-  background: rgb(3, 5, 5);
-  background: radial-gradient(
-    circle,
-    rgba(3, 5, 5, 1) 72%,
-    rgba(90, 231, 240, 1) 100%
-  );
+  background: radial-gradient(circle, rgba(3, 5, 5, 0.917) 35%, rgba(90, 230, 240, 0.292) 100%) ,url("../images/background.jpg");;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 25vh;
 
   &__logo {
     width: 400px;
-    height: 200px;
+    height: 190px;
   }
 
   &__title {
@@ -27,21 +26,15 @@
   }
 }
 
-.form {
-  margin-top: 30px;
-  text-align: center;
-  &__label {
-    padding: 10px;
-  }
-}
+
 
 .list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
+column-gap: 20px;
+row-gap: 20px;
   justify-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 20px;
   &__article {
     background: rgb(3, 5, 5);
     background: radial-gradient(
@@ -59,37 +52,11 @@
     gap: 10px;
     width: 250px;
     height: 310px;
-
-    &--detail {
-      background: rgb(108, 134, 134);
-      padding: 20px;
-      border-radius: 3%;
-      color: white;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      width: 70%;
-      height: 50vh;
-    }
   }
   &__img {
     width: 200px;
-    &--detail {
-      width: 300px;
-      border: 3px dashed #e9e1e1;
-      padding: 8px;
-    }
   }
   &__name {
     font-size: 1.3rem;
   }
-  &__text {
-    text-align: center;
-    padding: 20px;
-  }
-}
-
-.list_container--detail {
-  display: flex;
-  justify-content: center;
 }

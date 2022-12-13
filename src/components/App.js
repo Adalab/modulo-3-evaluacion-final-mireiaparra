@@ -40,7 +40,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-
+    <main>
       <Routes>
         <Route
           path="/"
@@ -65,6 +65,7 @@ function App() {
           }
         ></Route>
       </Routes>
+      </main>
     </div>
   );
 }
