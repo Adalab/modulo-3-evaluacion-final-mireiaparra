@@ -1,6 +1,6 @@
 .list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr;
   column-gap: 20px;
   row-gap: 20px;
   justify-items: center;
@@ -45,5 +45,17 @@
     color: white;
     margin-top: 10%;
     font-size: 1.3rem;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .list {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
