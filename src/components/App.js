@@ -33,6 +33,7 @@ function App() {
     ev.preventDefault();
     setFilterBySpecies("all");
     setFilterByName("");
+    setFilterByPlanet([]);
   };
 
   const handleFilterPlanet = (value) => {

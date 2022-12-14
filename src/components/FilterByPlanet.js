@@ -4,16 +4,17 @@ const FilterByPlanet = (props) => {
   };
     const renderPlanets = () => {
         return props.planets.map((planet, index) => {
-            return (<li key={index}>
-            <input type="checkbox" onChange={handleInput} value={planet}/>
-            <label>{planet}</label>
-            </li>
+            return (
+            <>
+            <input className="form__input--checkbox" type="checkbox" onChange={handleInput} value={planet} checked={props.filterByPlanet.includes(planet)}/>
+            <label className="form__label--checkbox">{planet}</label>
+            </>
         )})
     }
     return (
-        <ul>
+        <div className="form__div--checkbox">
             {renderPlanets()}
-        </ul>
+        </div>
     );
 };
 export default FilterByPlanet;
