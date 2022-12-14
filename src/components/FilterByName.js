@@ -5,7 +5,7 @@ const FilterByName = (props) => {
     return (
        <>
            <label htmlFor="name" className="form__label">Busca un personaje</label>
-            <input type="text" name="name" id="name" value={props.filterByName} onChange={handleChange} className="form__input"/>
+            <input className="form__input" type="text" name="name" id="name" placeholder="Rick" value={props.filterByName} onChange={handleChange} />
             </>
     );
 };

@@ -13,3 +13,15 @@
 @import "CharactersList";
 @import "NotFound";
 
+.App {
+  background: radial-gradient(
+  circle,
+  rgba(3, 5, 5, 0.917) 35%,
+  rgba(90, 230, 240, 0.292) 100%
+),
+url("../images/background.jpg");
+width: 100%;
+min-height: 100vh;
+background-size: cover;
+font-family: 'Type';
+}

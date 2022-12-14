@@ -1,9 +1,17 @@
 .form {
-  background: rgb(173, 206, 206);
   height: 60px;
   padding: 19px;
   text-align: center;
+
   &__label {
     padding: 10px;
+    color: white;
+    font-size: 1.3rem;
+  }
+
+  &__input {
+  font-size: 1.1rem;
+  color: rgb(108, 134, 134);
+  padding-left: 10px;
   }
 }

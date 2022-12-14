@@ -1,10 +1,4 @@
 .detail {
-  background-image: radial-gradient(
-      circle,
-      rgba(3, 5, 5, 0.917) 35%,
-      rgba(90, 230, 240, 0.292) 100%
-    ),
-    url("../images/background.jpg");
   height: 75vh;
 
   &__article {
@@ -21,7 +15,6 @@
     text-align: center;
     top: 95px;
     transform: translateX(-50%);
-    font-family: 'Type';
   }
 
   &__img {
@@ -46,16 +39,16 @@
   &__withIcon {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 8px;
     margin-bottom: 8px;
   }
 &__text {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 8px;
-  gap: 8px;
+  gap: 7px;
 }
 
 &__p {
