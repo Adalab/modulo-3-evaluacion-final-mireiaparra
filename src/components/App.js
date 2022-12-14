@@ -40,7 +40,7 @@ function App() {
 
   const handleSort = (value) => {
     setSortBy(value);
-  }
+  };
 
   const handleFilterPlanet = (value) => {
     if (filterByPlanet.includes(value)) {
@@ -50,54 +50,58 @@ function App() {
     } else {
       setFilterByPlanet([...filterByPlanet, value]);
     }
-  }
+  };
 
   // FUNCIONES Y VARIABLES QUE AYUDEN A RENDERIZAR HTML
   const charactersFiltered = dataCharacters
-  .filter((character) =>
-    character.name.toLowerCase().includes(filterByName.toLowerCase())
-  )
-  .filter((character) => 
-  filterBySpecies ===  "default" ||   filterBySpecies ===  "all" ? true : character.species === filterBySpecies
- )
- .filter((character) => {
-  if(filterByPlanet.length === 0) {
-    return true;
-  } else 
-  return filterByPlanet.includes(character.planet)
-});
+    .filter((character) =>
+      character.name.toLowerCase().includes(filterByName.toLowerCase())
+    )
+    .filter((character) =>
+      filterBySpecies === "default" || filterBySpecies === "all"
+        ? true
+        : character.species === filterBySpecies
+    )
+    .filter((character) => {
+      if (filterByPlanet.length === 0) {
+        return true;
+      } else return filterByPlanet.includes(character.planet);
+    });
 
-const charactersOrdered = () => {
-  let result = "";
- if(sortBy === "episodes"){
-  result = charactersFiltered.sort(function (a, b) {
-    if (a.episodes < b.episodes) {
-      return 1;
+  const charactersOrdered = () => {
+    let result = "";
+    if (sortBy === "episodes") {
+      result = charactersFiltered.sort(function (a, b) {
+        if (a.episodes < b.episodes) {
+          return 1;
+        }
+        if (a.episodes > b.episodes) {
+          return -1;
+        }
+        return 0;
+      });
+    } else {
+      result = charactersFiltered.sort(function (a, b) {
+        if (a[sortBy] > b[sortBy]) {
+          return 1;
+        }
+        if (a[sortBy] < b[sortBy]) {
+          return -1;
+        }
+        return 0;
+      });
     }
-    if (a.episodes > b.episodes) {
-      return -1;
-    }
-    return 0;
-  })
-} else {
-    result = charactersFiltered.sort(function (a, b) {
-    if (a[sortBy] > b[sortBy]) {
-      return 1;
-    }
-    if (a[sortBy] < b[sortBy]) {
-      return -1;
-    }
-    return 0;
-    })}
-return result;
-};
+    return result;
+  };
 
   const findCharacter = (id) => {
     return dataCharacters.find((character) => character.id === parseInt(id));
   };
 
   const getPlanets = () => {
-    const characterPlanets = dataCharacters.map((character) => character.planet);
+    const characterPlanets = dataCharacters.map(
+      (character) => character.planet
+    );
     const uniquePlanets = characterPlanets.filter((planet, index) => {
       return characterPlanets.indexOf(planet) === index;
     });
@@ -109,31 +113,37 @@ return result;
   return (
     <div className="App">
       <Header />
-    <main>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Filters
-                handleFilterName={handleFilterName}
-                filterByName={filterByName} handleFilterSpecies={handleFilterSpecies} filterBySpecies={filterBySpecies} handleReset={handleReset} planets={getPlanets()} handleFilterPlanet={handleFilterPlanet} filterByPlanet={filterByPlanet} handleSort={handleSort} sortBy={sortBy}
-              />
-              <CharactersList
-                characters={charactersOrdered()}
-                filterByName={filterByName}
-              />
-            </>
-          }
-        ></Route>
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Filters
+                  handleFilterName={handleFilterName}
+                  filterByName={filterByName}
+                  handleFilterSpecies={handleFilterSpecies}
+                  filterBySpecies={filterBySpecies}
+                  handleReset={handleReset}
+                  planets={getPlanets()}
+                  handleFilterPlanet={handleFilterPlanet}
+                  filterByPlanet={filterByPlanet}
+                  handleSort={handleSort}
+                  sortBy={sortBy}
+                />
+                <CharactersList
+                  characters={charactersOrdered()}
+                  filterByName={filterByName}
+                />
+              </>
+            }
+          ></Route>
 
-        <Route
-          path="/character/:characterId"
-          element={
-              <CharacterDetail findCharacter={findCharacter} />
-          }
-        ></Route>
-      </Routes>
+          <Route
+            path="/character/:characterId"
+            element={<CharacterDetail findCharacter={findCharacter} />}
+          ></Route>
+        </Routes>
       </main>
     </div>
   );

@@ -49,15 +49,15 @@ const CharacterDetail = (props) => {
               />
             </div>
             <div className="detail__text">
-            <p className="detail__p">Planeta: </p>
-            <p>{characterFound.planet}</p>
+              <p className="detail__p">Planeta: </p>
+              <p>{characterFound.planet}</p>
             </div>
             <div className="detail__text">
-            <p className="detail__p">Número de episodios: </p> 
-            <p className="detail__episodes">{characterFound.episodes}</p>
+              <p className="detail__p">Número de episodios: </p>
+              <p className="detail__episodes">{characterFound.episodes}</p>
             </div>
             <div className="detail__text">
-            <p className="detail__p"> Estatus: </p>
+              <p className="detail__p"> Estatus: </p>
               <img
                 className="list__icon"
                 src={`${returnStatus()}`}

@@ -7,11 +7,11 @@
   src: url("./Type\ Machine.ttf") format("truetype");
 }
 @import "core/reset";
-@import "CharacterDetail";
-@import "Filters";
-@import "Header";
-@import "CharactersList";
-@import "NotFound";
+@import "components/CharacterDetail";
+@import "components/Filters";
+@import "components/Header";
+@import "components/CharactersList";
+@import "components/NotFound";
 
 .App {
   background: radial-gradient(

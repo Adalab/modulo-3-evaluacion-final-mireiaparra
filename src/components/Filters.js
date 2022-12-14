@@ -15,12 +15,19 @@ const Filters = (props) => {
           filterByName={props.filterByName}
         />
         <FilterBySpecies
-          handleFilterSpecies={props.handleFilterSpecies} filterBySpecies={props.filterBySpecies}
+          handleFilterSpecies={props.handleFilterSpecies}
+          filterBySpecies={props.filterBySpecies}
         />
-        <FilterByPlanet planets={props.planets} handleFilterPlanet={props.handleFilterPlanet} filterByPlanet={props.filterByPlanet}/>
-        <SortBy handleSort={props.handleSort} sortBy={props.sortBy}/>
+        <FilterByPlanet
+          planets={props.planets}
+          handleFilterPlanet={props.handleFilterPlanet}
+          filterByPlanet={props.filterByPlanet}
+        />
+        <SortBy handleSort={props.handleSort} sortBy={props.sortBy} />
       </form>
-      <button className="form__reset" onClick={props.handleReset}>Reset</button>
+      <button className="form__reset" onClick={props.handleReset}>
+        Reset
+      </button>
     </section>
   );
 };
