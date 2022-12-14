@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.c44875b3.css",
-    "main.js": "./static/js/main.b5940247.js",
+    "main.css": "./static/css/main.8e0d0c04.css",
+    "main.js": "./static/js/main.55b30c1f.js",
     "static/media/Type Machine.ttf": "./static/media/Type Machine.6326e0da1f05f14b5262.ttf",
     "static/media/background.jpg": "./static/media/background.4fa67c67b85613f37004.jpg",
     "static/media/logo.png": "./static/media/logo.de3062ed18fb4232c53c.png",
@@ -13,11 +13,11 @@
     "static/media/alive.png": "./static/media/alive.f77819c97fbd45f28fa6.png",
     "static/media/arrow.png": "./static/media/arrow.49b33eadd94683b1e2ef.png",
     "index.html": "./index.html",
-    "main.c44875b3.css.map": "./static/css/main.c44875b3.css.map",
-    "main.b5940247.js.map": "./static/js/main.b5940247.js.map"
+    "main.8e0d0c04.css.map": "./static/css/main.8e0d0c04.css.map",
+    "main.55b30c1f.js.map": "./static/js/main.55b30c1f.js.map"
   },
   "entrypoints": [
-    "static/css/main.c44875b3.css",
-    "static/js/main.b5940247.js"
+    "static/css/main.8e0d0c04.css",
+    "static/js/main.55b30c1f.js"
   ]
 }
