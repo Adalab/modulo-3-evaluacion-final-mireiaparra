@@ -28,6 +28,11 @@ function App() {
   const handleFilterSpecies = (value) => {
     setFilterBySpecies(value);
   };
+  const handleReset = (ev) => {
+    ev.preventDefault();
+    setFilterBySpecies("all");
+    setFilterByName("");
+  };
 
   // FUNCIONES Y VARIABLES QUE AYUDEN A RENDERIZAR HTML
   const charactersFiltered = dataCharacters
@@ -56,7 +61,7 @@ function App() {
             <>
               <Filters
                 handleFilterName={handleFilterName}
-                filterByName={filterByName} handleFilterSpecies={handleFilterSpecies}
+                filterByName={filterByName} handleFilterSpecies={handleFilterSpecies} filterBySpecies={filterBySpecies}handleReset={handleReset}
               />
               <CharactersList
                 characters={charactersFiltered}

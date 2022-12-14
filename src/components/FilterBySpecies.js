@@ -3,7 +3,7 @@ const FilterBySpecies = (props) => {
     props.handleFilterSpecies(ev.target.value);
   };
   return (
-    <select className="form__select" onChange={handleChange}>
+    <select className="form__select" onChange={handleChange} value={props.filterBySpecies}>
       <option value="all">
         Todos
       </option>
