@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'grinched';
+    src: url('./GrinchedRegular.otf') format('truetype');
+  }
+@font-face {
+    font-family: 'Type';
+    src: url('./Type\ Machine.ttf') format('truetype');
+}
 @import "core/reset";
 @import "CharacterDetail";
 @import "Filters";

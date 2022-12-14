@@ -21,6 +21,7 @@
       rgba(90, 231, 240, 1) 100%
     );
     padding: 20px;
+    margin-bottom: 10px;
     border-radius: 10%;
     color: white;
     align-items: center;
@@ -42,6 +43,5 @@
 
   &__icon {
     height: 30px;
-    margin-bottom: 10px;
   }
 }
