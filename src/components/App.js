@@ -12,8 +12,9 @@ function App() {
   // VARIABLES ESTADO
   const [dataCharacters, setDataCharacters] = useState([]);
   const [filterByName, setFilterByName] = useState("");
-  const [filterBySpecies, setFilterBySpecies] = useState("all");
+  const [filterBySpecies, setFilterBySpecies] = useState("default");
   const [filterByPlanet, setFilterByPlanet] = useState([]);
+  const [sortBy, setSortBy] = useState("default");
 
   // USEEFFECT
   useEffect(() => {
@@ -31,10 +32,15 @@ function App() {
   };
   const handleReset = (ev) => {
     ev.preventDefault();
-    setFilterBySpecies("all");
+    setFilterBySpecies("default");
     setFilterByName("");
     setFilterByPlanet([]);
+    setSortBy("default");
   };
+
+  const handleSort = (value) => {
+    setSortBy(value);
+  }
 
   const handleFilterPlanet = (value) => {
     if (filterByPlanet.includes(value)) {
@@ -52,15 +58,39 @@ function App() {
     character.name.toLowerCase().includes(filterByName.toLowerCase())
   )
   .filter((character) => 
-  filterBySpecies === "all" ? true : character.species === filterBySpecies
+  filterBySpecies ===  "default" ||   filterBySpecies ===  "all" ? true : character.species === filterBySpecies
  )
  .filter((character) => {
   if(filterByPlanet.length === 0) {
     return true;
   } else 
-  return filterByPlanet.includes(character.planet);
-}
- );
+  return filterByPlanet.includes(character.planet)
+});
+
+const charactersOrdered = () => {
+  let result = "";
+ if(sortBy === "episodes"){
+  result = charactersFiltered.sort(function (a, b) {
+    if (a.episodes < b.episodes) {
+      return 1;
+    }
+    if (a.episodes > b.episodes) {
+      return -1;
+    }
+    return 0;
+  })
+} else {
+    result = charactersFiltered.sort(function (a, b) {
+    if (a[sortBy] > b[sortBy]) {
+      return 1;
+    }
+    if (a[sortBy] < b[sortBy]) {
+      return -1;
+    }
+    return 0;
+    })}
+return result;
+};
 
   const findCharacter = (id) => {
     return dataCharacters.find((character) => character.id === parseInt(id));
@@ -87,10 +117,10 @@ function App() {
             <>
               <Filters
                 handleFilterName={handleFilterName}
-                filterByName={filterByName} handleFilterSpecies={handleFilterSpecies} filterBySpecies={filterBySpecies} handleReset={handleReset} planets={getPlanets()} handleFilterPlanet={handleFilterPlanet} filterByPlanet={filterByPlanet}
+                filterByName={filterByName} handleFilterSpecies={handleFilterSpecies} filterBySpecies={filterBySpecies} handleReset={handleReset} planets={getPlanets()} handleFilterPlanet={handleFilterPlanet} filterByPlanet={filterByPlanet} handleSort={handleSort} sortBy={sortBy}
               />
               <CharactersList
-                characters={charactersFiltered}
+                characters={charactersOrdered()}
                 filterByName={filterByName}
               />
             </>

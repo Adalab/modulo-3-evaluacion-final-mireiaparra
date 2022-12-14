@@ -1,6 +1,7 @@
 import FilterByPlanet from "./FilterByPlanet";
 import FilterByName from "./FilterByName";
 import FilterBySpecies from "./FilterBySpecies";
+import SortBy from "./SortBy";
 
 const Filters = (props) => {
   const handleSubmit = (ev) => {
@@ -17,6 +18,7 @@ const Filters = (props) => {
           handleFilterSpecies={props.handleFilterSpecies} filterBySpecies={props.filterBySpecies}
         />
         <FilterByPlanet planets={props.planets} handleFilterPlanet={props.handleFilterPlanet} filterByPlanet={props.filterByPlanet}/>
+        <SortBy handleSort={props.handleSort} sortBy={props.sortBy}/>
       </form>
       <button className="form__reset" onClick={props.handleReset}>Reset</button>
     </section>

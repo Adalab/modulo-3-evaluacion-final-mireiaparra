@@ -4,6 +4,7 @@ const FilterBySpecies = (props) => {
   };
   return (
     <select className="form__select" onChange={handleChange} value={props.filterBySpecies}>
+       <option value="default" disabled>Especie...</option>
       <option value="all">
         Todos
       </option>
