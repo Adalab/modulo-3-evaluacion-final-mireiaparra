@@ -12,6 +12,7 @@ function App() {
   // VARIABLES ESTADO
   const [dataCharacters, setDataCharacters] = useState([]);
   const [filterByName, setFilterByName] = useState("");
+  const [filterBySpecies, setFilterBySpecies] = useState("all");
 
   // USEEFFECT
   useEffect(() => {
@@ -24,11 +25,18 @@ function App() {
   const handleFilterName = (value) => {
     setFilterByName(value);
   };
+  const handleFilterSpecies = (value) => {
+    setFilterBySpecies(value);
+  };
 
   // FUNCIONES Y VARIABLES QUE AYUDEN A RENDERIZAR HTML
-  const charactersFiltered = dataCharacters.filter((character) =>
+  const charactersFiltered = dataCharacters
+  .filter((character) =>
     character.name.toLowerCase().includes(filterByName.toLowerCase())
-  );
+  )
+  .filter((character) => 
+  filterBySpecies === "all" ? true : character.species === filterBySpecies
+ );
 
   const findCharacter = (id) => {
     return dataCharacters.find((character) => character.id === parseInt(id));
@@ -48,7 +56,7 @@ function App() {
             <>
               <Filters
                 handleFilterName={handleFilterName}
-                filterByName={filterByName}
+                filterByName={filterByName} handleFilterSpecies={handleFilterSpecies}
               />
               <CharactersList
                 characters={charactersFiltered}
