@@ -13,6 +13,7 @@ function App() {
   const [dataCharacters, setDataCharacters] = useState([]);
   const [filterByName, setFilterByName] = useState("");
   const [filterBySpecies, setFilterBySpecies] = useState("all");
+  const [filterByPlanet, setFilterByPlanet] = useState([]);
 
   // USEEFFECT
   useEffect(() => {
@@ -34,6 +35,16 @@ function App() {
     setFilterByName("");
   };
 
+  const handleFilterPlanet = (value) => {
+    if (filterByPlanet.includes(value)) {
+      const position = filterByPlanet.indexOf(value);
+      filterByPlanet.splice(position, 1);
+      setFilterByPlanet([...filterByPlanet]);
+    } else {
+      setFilterByPlanet([...filterByPlanet, value]);
+    }
+  }
+
   // FUNCIONES Y VARIABLES QUE AYUDEN A RENDERIZAR HTML
   const charactersFiltered = dataCharacters
   .filter((character) =>
@@ -41,12 +52,26 @@ function App() {
   )
   .filter((character) => 
   filterBySpecies === "all" ? true : character.species === filterBySpecies
+ )
+ .filter((character) => {
+  if(filterByPlanet.length === 0) {
+    return true;
+  } else 
+  return filterByPlanet.includes(character.planet);
+}
  );
 
   const findCharacter = (id) => {
     return dataCharacters.find((character) => character.id === parseInt(id));
   };
 
+  const getPlanets = () => {
+    const characterPlanets = dataCharacters.map((character) => character.planet);
+    const uniquePlanets = characterPlanets.filter((planet, index) => {
+      return characterPlanets.indexOf(planet) === index;
+    });
+    return uniquePlanets;
+  };
 
   // HTML EN EL RETURN
 
@@ -61,7 +86,7 @@ function App() {
             <>
               <Filters
                 handleFilterName={handleFilterName}
-                filterByName={filterByName} handleFilterSpecies={handleFilterSpecies} filterBySpecies={filterBySpecies}handleReset={handleReset}
+                filterByName={filterByName} handleFilterSpecies={handleFilterSpecies} filterBySpecies={filterBySpecies} handleReset={handleReset} planets={getPlanets()} handleFilterPlanet={handleFilterPlanet} filterByPlanet={filterByPlanet}
               />
               <CharactersList
                 characters={charactersFiltered}

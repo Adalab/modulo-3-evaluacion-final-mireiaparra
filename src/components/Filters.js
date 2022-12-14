@@ -1,3 +1,4 @@
+import FilterByPlanet from "./FilterByPlanet";
 import FilterByName from "./FilterByName";
 import FilterBySpecies from "./FilterBySpecies";
 
@@ -15,8 +16,9 @@ const Filters = (props) => {
         <FilterBySpecies
           handleFilterSpecies={props.handleFilterSpecies} filterBySpecies={props.filterBySpecies}
         />
-        <button onClick={props.handleReset}>Reset</button>
+        <FilterByPlanet planets={props.planets} handleFilterPlanet={props.handleFilterPlanet} filterByPlanet={props.filterByPlanet}/>
       </form>
+      <button className="form__reset" onClick={props.handleReset}>Reset</button>
     </section>
   );
 };
